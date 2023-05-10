@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "intro",
+  "steps": [
+    {
+      "file": "src/components/meals/mealItem/MealItem.jsx",
+      "description": "hello",
+      "line": 7
+    }
+  ]
+}
