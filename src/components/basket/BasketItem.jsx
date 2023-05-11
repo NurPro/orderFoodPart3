@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from '../../UI/Button';
 import styled from 'styled-components';
+import { CartContext } from '../../store/Cart-Context';
 
-const BasketItem = ({ title, price, amount }) => {
+const BasketItem = ({ title, price, amount, id }) => {
+	const context = useContext(CartContext);
 	return (
 		<Container>
 			<h4>{title}</h4>
 			<Content>
+				
 				<InformationBlock>
 					<p>${price}</p>
 					<span>x {amount}</span>
 				</InformationBlock>
 
 				<ButtonBlock>
-					<Button borderRadius='squared' variant='outlined'>
+					<Button
+						onc
+						borderRadius='squared'
+						variant='outlined'
+						onClick={() => {
+							context.decrement(id);
+						}}>
 						-
 					</Button>
-					<Button borderRadius='squared' variant='outlined'>
+					<Button
+						borderRadius='squared'
+						variant='outlined'
+						onClick={() => {
+							context.increment(id);
+						}}>
 						+
 					</Button>
 				</ButtonBlock>

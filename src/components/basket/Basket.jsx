@@ -1,29 +1,34 @@
 import React from 'react';
 import { Modal } from '../../UI/Modal';
-import { DUMMY_ITEMS } from '../../utils/constants';
+// import { DUMMY_ITEMS } from '../../utils/constants';
 import BasketItem from './BasketItem';
 import TotalAmount from './TotalAmount';
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { CartContext } from '../../store/Cart-Context';
 
 const Basket = ({ onClose }) => {
+	const context = useContext(CartContext);
 	return (
 		<Modal>
 			<Content>
-				{DUMMY_ITEMS.length ? (
+				{context.items.length ? (
 					<FixedWidthContainer>
-						{DUMMY_ITEMS.map((item) => {
-							return (
+						{context.items.map((item) =>
+							item.amount > 0 ? (
 								<BasketItem
 									key={item.id}
 									title={item.title}
 									price={item.price}
-									amount={item.amount}></BasketItem>
-							);
-						})}
+									amount={item.amount}
+									id={item.id}
+								/>
+							) : null
+						)}
 					</FixedWidthContainer>
 				) : null}
 
-				<TotalAmount totalPrice={0} onClose={onClose} />
+				<TotalAmount totalPrice={context.totalPrice} onClose={onClose} />
 			</Content>
 		</Modal>
 	);
