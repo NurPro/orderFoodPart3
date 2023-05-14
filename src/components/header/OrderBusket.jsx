@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ReactComponent as BasketIcon } from '../../assets/icons//Basket.svg';
 import { CartContext } from '../../store/Cart-Context';
 
-const OrderBusket = ({ children, onToggle }) => {
+const OrderBusked = ({ children, onToggle }) => {
 	 const context = useContext(CartContext)
 	return (
 		<Button onClick={onToggle}>
@@ -43,4 +43,4 @@ const OrderBasketCount = styled.span`
 	padding: 9px 20px;
 	font-weight: 600;
 `;
-export default OrderBusket;
+export default OrderBusked;

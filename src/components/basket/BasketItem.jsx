@@ -9,7 +9,6 @@ const BasketItem = ({ title, price, amount, id }) => {
 		<Container>
 			<h4>{title}</h4>
 			<Content>
-				
 				<InformationBlock>
 					<p>${price}</p>
 					<span>x {amount}</span>

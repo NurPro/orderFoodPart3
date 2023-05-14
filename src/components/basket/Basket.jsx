@@ -46,3 +46,4 @@ const FixedWidthContainer = styled.div`
 `;
 
 export default Basket;
+

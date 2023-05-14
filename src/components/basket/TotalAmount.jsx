@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '../../UI/Button';
 import styled from 'styled-components';
 
-const TotalAmount = ({ totalPrice, onOrder,  onClose }) => {
+const TotalAmount = ({ totalPrice, onOrder, onClose }) => {
 	const isOrderButton =
 		totalPrice > 0 ? (
 			<Button variant='contained' onClick={onOrder}>
@@ -17,7 +17,6 @@ const TotalAmount = ({ totalPrice, onOrder,  onClose }) => {
 				<h3>Total Amount</h3>
 				<h4>${fixedPrice}</h4>
 			</TextContainer>
-
 			<ButtonContainer>
 				<Button variant='outlined' onClick={onClose}>
 					Close
@@ -27,11 +26,9 @@ const TotalAmount = ({ totalPrice, onOrder,  onClose }) => {
 		</Container>
 	);
 };
-
 const Container = styled.div`
 	padding-top: 30px;
 `;
-
 const TextContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
@@ -61,3 +58,5 @@ const ButtonContainer = styled.div`
 `;
 
 export default TotalAmount;
+
+
